@@ -1,0 +1,59 @@
+.container {
+  padding: 4px;
+  display: inline-block;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* フォーカスされているときのアニメーション */
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--color-primary);
+  animation: focus-animation 0.3s ease-out;
+}
+
+/* フォーカスのアニメーション */
+@keyframes focus-animation {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-primary);
+  }
+  100% {
+    box-shadow: 0 0 0 4px var(--color-primary);
+  }
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

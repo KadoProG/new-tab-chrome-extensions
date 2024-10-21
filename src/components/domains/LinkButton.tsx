@@ -1,21 +1,20 @@
-import styles from '@/components/common/button/Button.module.scss';
 import React from 'react';
+import styles from '@/components/domains/LinkButton.module.scss';
 import { Link } from 'react-router-dom';
 
-interface ButtonProps {
+interface LinkButtonProps {
   onClick?: () => void;
-  onMouseDown?: (e: React.MouseEvent) => void;
   disabled?: boolean;
   type?: HTMLButtonElement['type'];
-  children: React.ReactNode;
-  href?: string;
-  width?: React.CSSProperties['width'];
   style?: React.CSSProperties;
+  href?: string;
+  children: React.ReactNode;
+  onMouseDown: (e: React.MouseEvent) => void;
 }
 
-export const Button: React.FC<ButtonProps> = (props) =>
+export const LinkButton: React.FC<LinkButtonProps> = (props) =>
   props.href ? (
-    <Link to={props.href} className={styles.button} style={{ width: props.width, ...props.style }}>
+    <Link to={props.href} className={styles.button}>
       {props.children}
     </Link>
   ) : (
@@ -25,7 +24,6 @@ export const Button: React.FC<ButtonProps> = (props) =>
       disabled={props.disabled}
       type={props.type}
       className={styles.button}
-      style={{ width: props.width, ...props.style }}
     >
       {props.children}
     </button>
