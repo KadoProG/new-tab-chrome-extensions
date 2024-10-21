@@ -1,4 +1,5 @@
-import { Button } from '@/components/common/button/Button';
+import { IPAdress } from '@/components/domains/IPAdress';
+import { LinkCardList } from '@/components/domains/LinkCardList';
 import React from 'react';
 
 export const App: React.FC = () => {
@@ -11,41 +12,19 @@ export const App: React.FC = () => {
     {
       title: 'notion',
       url: 'https://www.notion.so',
-      imageUrl: 'https://www.notion.so/favicon.ico',
+      imageUrl: '/notion.png',
     },
     {
       title: 'notion',
       url: 'https://www.notion.so',
-      imageUrl: 'https://www.notion.so/favicon.ico',
+      imageUrl: '/notion.png',
     },
   ]);
 
   return (
     <div>
-      {links.map((link) => {
-        return (
-          <div
-            key={link.url}
-            style={{
-              border: '1px solid var(--divider)',
-            }}
-          >
-            <Button href={link.url}>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
-                {link.imageUrl && (
-                  <img src={link.imageUrl} alt={link.title} width={40} height={40} />
-                )}
-                <p style={{ flex: 1 }}>{link.title}</p>
-              </div>
-            </Button>
-          </div>
-        );
-      })}
+      <LinkCardList links={links} />
+      <IPAdress />
     </div>
   );
 };

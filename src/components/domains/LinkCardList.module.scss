@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  &__top__button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}

@@ -2,7 +2,8 @@
   // Colors
   --color-main: #111;
   --color-paper: #fff;
-  --color-paper-secondary: #eee;
+  --color-paper-focus: #f5f5f5;
+  --color-paper-active: #eee;
   --color-paper-text: #222;
   --color-primary: #007bff;
   --color-primary-hover: #2d92ff;
@@ -45,6 +46,10 @@ img {
   :root {
     // Colors
     --color-main: #ddd;
+    --color-paper: #222;
+    --color-paper-focus: #333;
+    --color-paper-active: #444;
+    --color-paper-text: #fff;
     --color-primary: #134692;
     --color-primary-hover: #2b5aa1;
     --color-secondary: #6c757d;
