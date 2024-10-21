@@ -1,6 +1,6 @@
 import React from 'react';
 import { getLocalIpAddress } from '@/utils';
-import styles from '@/App.module.scss';
+import styles from '@/components/domains/IPAdress.module.scss';
 
 export const IPAdress: React.FC = () => {
   const [ipAdress, setIpAddress] = React.useState<string>('');
