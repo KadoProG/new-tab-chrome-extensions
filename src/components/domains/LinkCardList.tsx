@@ -18,5 +18,12 @@ export const LinkCardList: React.FC<LinkCardListProps> = (props) => (
         </Button>
       </div>
     ))}
+    <div className={styles.item}>
+      <Button onClick={() => alert('click')}>
+        <div className={styles.item__top__button}>
+          <p style={{ flex: 1 }}>追加</p>
+        </div>
+      </Button>
+    </div>
   </div>
 );
