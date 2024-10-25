@@ -45,7 +45,7 @@ export const LinkProvider: React.FC<Props> = (props) => {
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(links));
   }, [links]);
 
-  const value = React.useMemo(() => ({ links }), [links]);
+  const value = React.useMemo(() => ({ links, setLinks }), [links]);
 
   return <linkContext.Provider value={value}>{props.children}</linkContext.Provider>;
 };
