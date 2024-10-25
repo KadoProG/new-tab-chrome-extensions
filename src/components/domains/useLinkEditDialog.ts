@@ -29,5 +29,12 @@ export const useLinkEditDialog = (
     })();
   }, [handleSubmit, setLinks, onClose]);
 
-  return { control, reset, onSubmit };
+  const onDelete = React.useCallback(() => {
+    handleSubmit((data) => {
+      setLinks((links) => links.filter((link) => link.id !== data.id));
+      onClose();
+    })();
+  }, [handleSubmit, setLinks, onClose]);
+
+  return { control, reset, onSubmit, onDelete };
 };

@@ -13,12 +13,21 @@ export const LinkEditDialogProvider: React.FC<Props> = (props) => {
   const onClose = React.useCallback(() => setIsOpen(false), []);
 
   const { links, setLinks } = useLinkContext();
-  const { control, reset, onSubmit } = useLinkEditDialog(setLinks, onClose);
+  const { control, reset, onSubmit, onDelete } = useLinkEditDialog(setLinks, onClose);
 
   const edit = React.useCallback(
     (id?: Link['id']) => {
       const link = links.find((link) => link.id === id);
-      reset(link);
+      if (!link) {
+        reset({
+          id: undefined,
+          title: '',
+          url: '',
+          imageUrl: '',
+        });
+      } else {
+        reset(link);
+      }
       setIsOpen(true);
     },
     [reset, links]
@@ -29,7 +38,13 @@ export const LinkEditDialogProvider: React.FC<Props> = (props) => {
   return (
     <linkEditDialogContext.Provider value={value}>
       {props.children}
-      <LinkEditDialog isOpen={isOpen} onClose={onClose} control={control} onSubmit={onSubmit} />
+      <LinkEditDialog
+        isOpen={isOpen}
+        onClose={onClose}
+        control={control}
+        onSubmit={onSubmit}
+        onDelete={onDelete}
+      />
     </linkEditDialogContext.Provider>
   );
 };
