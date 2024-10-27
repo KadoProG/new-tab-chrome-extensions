@@ -1,4 +1,10 @@
-# React + TypeScript + Vite
+# Chrome の HOME を好きにできる拡張機能
+
+<img width="898" alt="スクリーンショット 2024-10-28 7 16 00" src="https://github.com/user-attachments/assets/1b80a080-4f1b-47c6-8da6-c52769c8e85f">
+
+データはローカルストレージに保存され、追加・編集ができます。
+
+<img width="898" alt="スクリーンショット 2024-10-28 7 18 28" src="https://github.com/user-attachments/assets/45d5406a-1166-47d1-8f08-208b092586eb">
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
