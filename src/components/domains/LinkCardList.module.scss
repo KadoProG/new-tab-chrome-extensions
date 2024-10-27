@@ -7,6 +7,9 @@
 .item {
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--divider);
+  padding: 4px;
+  position: relative;
   &__top__button {
     display: flex;
     align-items: center;
