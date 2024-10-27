@@ -1,56 +1,22 @@
 # Chrome の HOME を好きにできる拡張機能
 
-<img width="898" alt="スクリーンショット 2024-10-28 7 16 00" src="https://github.com/user-attachments/assets/1b80a080-4f1b-47c6-8da6-c52769c8e85f">
+| HOME画面                                                                                                                                            | 編集ダイアログ表示                                                                                                                                  |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img width="898" alt="スクリーンショット 2024-10-28 7 16 00" src="https://github.com/user-attachments/assets/1b80a080-4f1b-47c6-8da6-c52769c8e85f"> | <img width="898" alt="スクリーンショット 2024-10-28 7 18 28" src="https://github.com/user-attachments/assets/45d5406a-1166-47d1-8f08-208b092586eb"> |
 
 データはローカルストレージに保存され、追加・編集ができます。
 
-<img width="898" alt="スクリーンショット 2024-10-28 7 18 28" src="https://github.com/user-attachments/assets/45d5406a-1166-47d1-8f08-208b092586eb">
+## 機能一覧
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Webショートカットリンク追加機能
+- プライベートIPアドレス表示機能
+- 現在時刻表示機能
 
-Currently, two official plugins are available:
+## 起動・デプロイ方法
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```shell
+yarn # install package
+yarn build # build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+ビルド後、[Chrome拡張機能](chrome://extensions/)を開き、そこに`build`フォルダをドラッグすると、拡張機能が有効になります。（ビルドフォルダを削除すると拡張機能も消去されます）
