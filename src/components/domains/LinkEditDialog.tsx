@@ -21,7 +21,13 @@ export const LinkEditDialog: React.FC<Props> = (props) => {
 
   return (
     <DialogContainer isOpen={props.isOpen} onClose={props.onClose}>
-      <DialogContent style={{ maxWidth: 600 }}>
+      <DialogContent
+        style={{ maxWidth: 600 }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          props.onSubmit();
+        }}
+      >
         <DialogHeader
           title={`リンク${id ? '編集' : '追加'}`}
           onDelete={id ? props.onDelete : undefined}
@@ -32,7 +38,7 @@ export const LinkEditDialog: React.FC<Props> = (props) => {
           <TextField label="画像URL" control={props.control} name="imageUrl" type="text" />
         </DialogBody>
         <DialogActions>
-          <Button onClick={props.onSubmit}>登録する</Button>
+          <Button type="submit">登録する</Button>
         </DialogActions>
       </DialogContent>
     </DialogContainer>
