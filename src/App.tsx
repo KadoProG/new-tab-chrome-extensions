@@ -3,6 +3,7 @@ import { useNetworkStatusContext } from '@/components/contexts/networkStatus/use
 import { IPAdress } from '@/components/domains/IPAdress';
 import { LinkCardList } from '@/components/domains/LinkCardList';
 import React from 'react';
+import { DuringBreak } from './components/DuringBreak';
 
 export const App: React.FC = () => {
   const { isOnline } = useNetworkStatusContext();
@@ -13,6 +14,7 @@ export const App: React.FC = () => {
       <LinkCardList links={links} />
       <IPAdress />
       {isOnline ? 'オンライン' : 'オフライン'}
+      <DuringBreak />
     </div>
   );
 };
