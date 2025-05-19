@@ -1,6 +1,6 @@
 import { useLinkContext } from '@/components/contexts/link/useLinkContext';
 import { useNetworkStatusContext } from '@/components/contexts/networkStatus/useNetworkStatusContext';
-import { IPAdress } from '@/components/domains/IPAdress';
+import { IPAddress } from '@/components/domains/IPAddress';
 import { LinkCardList } from '@/components/domains/LinkCardList';
 import React from 'react';
 import { DuringBreak } from './components/DuringBreak';
@@ -12,7 +12,7 @@ export const App: React.FC = () => {
   return (
     <div>
       <LinkCardList links={links} />
-      <IPAdress />
+      <IPAddress />
       {isOnline ? 'オンライン' : 'オフライン'}
       <DuringBreak />
     </div>

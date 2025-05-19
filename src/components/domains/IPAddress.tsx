@@ -2,8 +2,8 @@ import React from 'react';
 import { getLocalIpAddress } from '@/utils';
 import styles from '@/components/domains/IPAdress.module.scss';
 
-export const IPAdress: React.FC = () => {
-  const [ipAdress, setIpAddress] = React.useState<string>('');
+export const IPAddress: React.FC = () => {
+  const [ipAddress, setIpAddress] = React.useState<string>('');
   const [time, setTime] = React.useState<string>('');
 
   React.useEffect(() => {
@@ -24,7 +24,7 @@ export const IPAdress: React.FC = () => {
     <div className={styles.div}>
       <div>
         <p style={{ fontSize: '3vw' }}>あなたのローカルIPアドレスは、</p>
-        <p style={{ fontSize: '10vw' }}>{ipAdress}</p>
+        <p style={{ fontSize: '10vw' }}>{ipAddress}</p>
 
         <p style={{ fontSize: '5vw' }}>{time}</p>
         <button onClick={() => document.body.requestFullscreen()}>全画面表示</button>
