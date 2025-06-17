@@ -1,5 +1,5 @@
 import React from 'react';
-import { getLocalIpAddress } from '@/utils';
+import { getLocalIpAddress } from '@/utils/getLocalIpAddress';
 import styles from '@/components/domains/IPAdress.module.scss';
 
 export const IPAddress: React.FC = () => {
